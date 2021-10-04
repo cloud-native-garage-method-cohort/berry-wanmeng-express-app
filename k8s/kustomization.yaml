@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- deployment.yaml
+- service.yaml
+- route.yaml
+images:
+- name: quay.io/upslopeio/express-sample-app
+  newName: quay.io/berringo/express-sample-app
+  newTag: 405f7abac2356f452a8de2ee54b785a03757409ef6e8daa4c6822e75e19f1790
