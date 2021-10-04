@@ -8,3 +8,7 @@ images:
 - name: quay.io/upslopeio/express-sample-app
   newName: quay.io/berringo/express-sample-app
   newTag: 405f7abac2356f452a8de2ee54b785a03757409ef6e8daa4c6822e75e19f1790
+commonLabels:
+  app: express-sample-app
+  app.kubernetes.io/instance: express-sample-app
+  app.kubernetes.io/name: express-sample-app
