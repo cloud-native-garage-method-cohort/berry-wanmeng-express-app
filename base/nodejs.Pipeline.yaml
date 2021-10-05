@@ -51,12 +51,10 @@ spec:
       runAfter:
         - create-image
       taskRef:
-        name: kustomize
+        name: create-configuration
       params:
         - name: app-name
           value: "$(params.app-name)"
-        - name: app-namespace
-          value: "$(context.pipelineRun.namespace)"
         - name: source-repo
           value: "$(params.source-repo)"
         - name: commit
@@ -70,8 +68,8 @@ spec:
           workspace: pipeline-shared-data
     - name: deploy
       params:
-        - name: app-name
-          value: "$(params.app-name)"
+        - name: manifest
+          value: "$(tasks.create-configuration.results.manifest)" 
         - name: app-namespace
           value: "$(context.pipelineRun.namespace)"
       runAfter:
