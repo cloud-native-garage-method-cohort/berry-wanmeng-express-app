@@ -60,9 +60,9 @@ spec:
           - name: app-name
             value: express-sample-app
           - name: source-repo
-            value: https://github.com/<your-account>/express-sample-app
+            value: https://github.com/cloud-native-garage-method-cohort/berry-wanmeng-express-app
           - name: image-repo
-            value: quay.io/<your-account>/express-sample-app
+            value: quay.io/berringo/express-sample-app
         workspaces:
           - name: pipeline-shared-data
             volumeClaimTemplate:
